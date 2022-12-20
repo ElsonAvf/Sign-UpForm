@@ -1,0 +1,146 @@
+@font-face {
+  font-family: norse-bold;
+  src: url("../fonts/Norse-Bold.otf");
+}
+
+* {
+  box-sizing: border-box;
+  font-family: arial, sans-serif;
+}
+
+body {
+  height: 100%;
+}
+
+#hero {
+  position: relative;
+}
+
+#background-image {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+}
+
+#logo-bg {
+  background-color: rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo-bg > img {
+  width: 30%;
+}
+
+#logo-bg > div {
+  font: 100px norse-bold;
+  color: white;
+}
+
+.container {
+  background-color: #F9FAFB;
+  padding: 12px 0 0;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+p:nth-child(1),
+p:nth-child(2) {
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 15px;
+}
+
+form + p {
+  font-size: 12px;
+}
+
+h1,
+.inputs-container {
+  padding: 12px 25px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.inputs-container {
+  box-shadow: 0 2px 5px -3px rgba(0,0,0,.4);
+  margin-bottom: 16px;
+}
+
+label {
+  color: #232D3B;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+label, input {
+  display: block;
+}
+
+:focus {
+  outline: 0;
+}
+
+form input {
+  width: 100%;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid #E5E7EB;
+  padding: 4px;
+}
+
+form input:focus:valid {
+  border: 1px solid green;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.4);
+}
+
+form input:valid:not(:placeholder-shown):not(:focus) {
+  border: 1px solid green;
+  background-color: rgba(139,195,74,.2);
+}
+
+form input:focus:invalid {
+  border: 1px solid red;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.4);
+}
+
+form input:invalid:not(:placeholder-shown):not(:focus) {
+  border: 1px solid red;
+  background-color: rgba(255,0,0,.2);
+}
+
+button {
+  padding: 10px 25px;
+  color: white;
+  background: #596D48;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 2px 2px 3px rgba(0,0,0,.4);
+}
+
+a {
+  text-decoration: none;
+  color: #596D48;
+}
+
+p, button {
+  margin: 0 25px 12px 25px;
+}
+
+p, h1,
+button {
+  font-weight: bold;
+}
