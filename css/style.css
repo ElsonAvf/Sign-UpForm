@@ -6,60 +6,50 @@
 * {
   box-sizing: border-box;
   font-family: arial, sans-serif;
+  color: white;
 }
 
 body {
   height: 100%;
-}
-
-#hero {
-  position: relative;
-}
-
-#background-image {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #18191B;
 }
 
 header {
   display: flex;
   align-items: center;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-}
-
-#logo-bg {
-  background-color: rgba(0,0,0,.5);
-  display: flex;
-  align-items: center;
   justify-content: center;
+  background-color: #596D48;
+  padding: 12px;
 }
 
-#logo-bg > img {
+header > img {
   width: 30%;
 }
 
-#logo-bg > div {
+header > div {
   font: 100px norse-bold;
   color: white;
-}
-
-.container {
-  background-color: #F9FAFB;
-  padding: 12px 0 0;
 }
 
 h1 {
   font-size: 20px;
   margin-bottom: 0;
+  padding: 12px 25px 0;
 }
 
-p:nth-child(1),
+p:not(:last-child) {
+  color: #A0A0A0;
+}
+
 p:nth-child(2) {
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 p {
+  text-align: center;
+  margin: 12px 0;
   font-size: 15px;
 }
 
@@ -69,18 +59,17 @@ form + p {
 
 h1,
 .inputs-container {
-  padding: 12px 25px;
   width: 100%;
-  background-color: #fff;
+  background-color: #242527;
 }
 
 .inputs-container {
+  padding: 12px 25px;
   box-shadow: 0 2px 5px -3px rgba(0,0,0,.4);
-  margin-bottom: 16px;
 }
 
 label {
-  color: #232D3B;
+  color: #A0A0A0;
   font-size: 12px;
   margin-bottom: 3px;
 }
@@ -99,6 +88,7 @@ form input {
   border-radius: 6px;
   border: 1px solid #E5E7EB;
   padding: 4px;
+  background-color: #313131;
 }
 
 form input:focus:valid {
@@ -122,12 +112,12 @@ form input:invalid:not(:placeholder-shown):not(:focus) {
 }
 
 button {
-  padding: 10px 25px;
-  color: white;
-  background: #596D48;
+  margin: 12px 25px 0 25px;
+  padding: 12px 0;
+  background-color: #596D48;
   border: none;
   border-radius: 8px;
-  margin-bottom: 12px;
+  width: calc(100% - 50px);
   box-shadow: 2px 2px 3px rgba(0,0,0,.4);
 }
 
@@ -136,11 +126,11 @@ a {
   color: #596D48;
 }
 
-p, button {
-  margin: 0 25px 12px 25px;
-}
-
 p, h1,
 button {
   font-weight: bold;
+}
+
+em {
+  font-style: italic;
 }
