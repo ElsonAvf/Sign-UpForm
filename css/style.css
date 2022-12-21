@@ -58,23 +58,22 @@ form + p {
 }
 
 h1,
-.inputs-container {
+#inputs-container {
   width: 100%;
   background-color: #242527;
 }
 
-.inputs-container {
+#inputs-container {
   padding: 12px 25px;
-  box-shadow: 0 2px 5px -3px rgba(0,0,0,.4);
 }
 
 label {
   color: #A0A0A0;
   font-size: 12px;
-  margin-bottom: 3px;
 }
 
-label, input {
+input {
+  margin: 8px 0;
   display: block;
 }
 
@@ -82,33 +81,46 @@ label, input {
   outline: 0;
 }
 
-form input {
-  width: 100%;
+form > div {
   margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
   border-radius: 6px;
   border: 1px solid #E5E7EB;
   padding: 4px;
   background-color: #313131;
 }
 
-form input:focus:valid {
+input:focus:valid {
   border: 1px solid green;
-  box-shadow: 1px 1px 3px rgba(0,0,0,.4);
 }
 
-form input:valid:not(:placeholder-shown):not(:focus) {
+input:valid:not(:placeholder-shown):not(:focus) {
   border: 1px solid green;
   background-color: rgba(139,195,74,.2);
 }
 
-form input:focus:invalid {
+input:focus:invalid {
   border: 1px solid red;
-  box-shadow: 1px 1px 3px rgba(0,0,0,.4);
 }
 
-form input:invalid:not(:placeholder-shown):not(:focus) {
+input:invalid:not(:placeholder-shown):not(:focus) {
   border: 1px solid red;
   background-color: rgba(255,0,0,.2);
+}
+
+.password-weak:not(.password-weak:focus-within)::after {
+  font-size: 12px;
+  content: 'A senha deve conter letras maiúsculas e minúsculas, números, caracteres especiais (@ # $ ?) e deve ter no mínimo 8 caracteres';
+  color: red;
+}
+
+.password-dont-match:not(.password-dont-match:focus-within)::after {
+  font-size: 12px;
+  content: "As senhas são incompatíveis";
+  color: red;
 }
 
 button {
@@ -118,7 +130,6 @@ button {
   border: none;
   border-radius: 8px;
   width: calc(100% - 50px);
-  box-shadow: 2px 2px 3px rgba(0,0,0,.4);
 }
 
 a {
