@@ -137,6 +137,40 @@ input:invalid:not(:placeholder-shown):not(:focus) {
   color: red;
 }
 
+meter {
+  display: none;
+}
+
+input#password:focus + meter {
+  width: 100%;
+  display: inline;
+}
+
+input#password:focus + meter::after {
+ font-family: Monospace;
+ font-weight: bold;
+}
+
+input#password:focus + meter.bad::after {
+  content: "bad";
+  color: red;
+}
+
+input#password:focus + meter.weak::after {
+  content: "weak";
+  color: yellow;
+}
+
+input#password:focus + meter.good::after {
+  content: "good";
+  color: lightgreen;
+}
+
+input#password:focus + meter.excelent::after {
+  content: "excelent";
+  color: green;
+}
+
 button {
   margin: 12px 25px 0 25px;
   padding: 12px 0;

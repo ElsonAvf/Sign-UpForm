@@ -5,6 +5,48 @@ const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirm-password");
 const visibilityIcons = document.querySelectorAll(".material-symbols-outlined");
 const passwordInputs = document.querySelectorAll("input[type='password']");
+const meter = document.querySelector("meter");
+
+function checkPasswordStrength() {
+  let strength = 0;
+  if (password.value.match(/(?=.{8,})/)) {
+    strength += 1;
+  }
+  if (password.value.match(/(?=.*[A-Z])/)) {
+    strength +=1;
+  }
+  if (password.value.match(/(?=.*[a-z])/)) {
+    strength += 1;
+  }
+  if (password.value.match(/(?=.*[0-9])/)) {
+    strength += 1;
+  }
+  if (password.value.match(/([^A-Za-z0-9])/)) {
+    strength += 1;
+  }
+  return strength
+}
+
+function setPasswordStrengthMessage(strengthNumner) {
+  meter.setAttribute('class', '');
+  switch (strengthNumner) {
+    case 1:
+      meter.classList.add('bad');
+      break;
+    case 2:
+      meter.classList.add('weak');
+      break;
+    case 3:
+      meter.classList.add('weak');
+      break;
+    case 4:
+      meter.classList.add('good');
+      break;
+    case 5:
+      meter.classList.add('excelent');
+      break;
+  }
+}
 
 password.addEventListener('blur', () => {
   if (!password.validity.valid && password.value) {
@@ -38,3 +80,8 @@ for (let i = 0; i < visibilityIcons.length; i++) {
     }
   })
 }
+
+password.addEventListener('input', () => {
+  setPasswordStrengthMessage(checkPasswordStrength());
+  meter.value = checkPasswordStrength();
+})
