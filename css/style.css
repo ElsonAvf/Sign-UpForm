@@ -69,7 +69,7 @@ h1,
 
 label {
   color: #A0A0A0;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 input {
@@ -103,7 +103,7 @@ input {
   width: 100%;
   border-radius: 6px;
   border: 1px solid #E5E7EB;
-  padding: 4px;
+  padding: 12px;
   background-color: #313131;
 }
 
